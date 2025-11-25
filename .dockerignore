@@ -1,0 +1,39 @@
+# Build artifacts
+build/
+.dart_tool/
+.flutter-plugins
+.packages
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.cursor/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed for build)
+docs/
+
+# Testing
+coverage/
+test/
+
+# Development files
+.env*
+
+# Platform-specific builds (keep source, ignore builds)
+android/app/build/
+ios/Flutter/flutter_assets/
+**/DerivedData/
+**/build/
+**/ephemeral/
+
+# Logs
+*.log
