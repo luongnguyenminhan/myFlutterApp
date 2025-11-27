@@ -495,3 +495,4 @@ Create providers for:
 ## What's Next?
 
 In the next guide, we'll build complete UI screens using what we've learned about widgets and state management!
+

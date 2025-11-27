@@ -192,3 +192,4 @@ In the next guide, we'll explore the project structure and understand the MVVM (
 4. Experiment with different text styles
 
 Remember: Every time you make a change, use **Hot Reload** (Ctrl+R) to see it instantly!
+
