@@ -1,0 +1,307 @@
+---
+alwaysApply: true
+---
+
+# UI Design Principles - Human-Centric AI Collaboration
+
+## Core Philosophy
+
+Create UI that feels human-crafted, not AI-generated. Focus on consistency, uniqueness, and professional polish while leveraging AI for efficiency.
+
+## 🎨 Visual Design Rules
+
+### 1. Shadow & Depth
+
+- **❌ AVOID**: Box shadows completely
+- **✅ USE**: Light borders instead (`border-neutral-700`, `border-neutral-600`)
+- **Rationale**: Box shadows create artificial depth that screams "AI-generated"
+
+### 2. Color Gradients
+
+- **❌ AVOID**: Excessive gradients everywhere
+- **✅ USE**: Minimal gradients only for specific interactions (button hover, accent elements)
+- **Rationale**: Overuse creates visual noise and dated appearance
+
+### 3. Border Radius Hierarchy
+
+- **❌ AVOID**: Uniform border radius across all elements
+- **✅ USE**: Hierarchical system:
+  - Large containers/cards: `rounded-xl` (16px)
+  - Medium elements: `rounded-lg` (12px)
+  - Small elements/buttons: `rounded-md` (8px)
+  - Tiny elements: `rounded-sm` (4px)
+- **Rationale**: Creates visual harmony and professional structure
+
+### 4. Typography
+
+- **❌ AVOID**: System default fonts
+- **✅ USE**: Distinctive, professional fonts:
+  - Headings: `Montserrat` or `Montserrat Alternates` (weight 600)
+  - Body text: `Be Vietnam Pro` or `Inter` (weights 400/500)
+  - Monospace: `JetBrains Mono` or `Fira Code`
+- **Rationale**: Default fonts look generic and AI-generated
+
+### 5. Visual Effects
+
+- **❌ AVOID**: Glassmorphism, blur backgrounds, excessive transparency
+- **✅ USE**: Subtle effects only when essential
+- **Rationale**: These effects often look trendy but artificial
+
+### 6. Color Palette
+
+- **❌ AVOID**: Default blue-purple schemes (#3B82F6, #8B5CF6)
+- **✅ USE**: Custom, thoughtful palettes:
+  - Primary: Brand-specific colors
+  - Secondary: Supporting colors
+  - Neutral: Grays with personality
+  - Accent: One or two highlight colors
+- **Rationale**: AI defaults to blue-purple; choose colors that reflect your brand
+
+### 7. Icons
+
+- **❌ AVOID**: Emoji icons (😊, 🚀, ⭐)
+- **✅ USE**: Professional icon libraries:
+  - `Lucide React` (outline style)
+  - `Heroicons`
+  - `Phosphor Icons`
+  - Custom SVG icons
+- **Rationale**: Emojis can't be styled and look unprofessional
+
+### 8. Animations
+
+- **❌ AVOID**: Excessive, random animations
+- **✅ USE**: Purposeful, synchronized animations:
+  - Hover states: Subtle scale/transform (1.02x)
+  - Transitions: 200-300ms duration
+  - Loading: Smooth, consistent spinners
+  - Page transitions: Slide/fade with easing
+- **Rationale**: Random animations feel chaotic and unpolished
+
+## 🏗️ Development Workflow
+
+### Phase 1: Research & Inspiration
+
+1. **Gather References**: Browse Dribbble, Behance, Pinterest
+2. **Bookmark Favorites**: Save inspiring designs
+3. **Analyze Patterns**: Note what makes designs effective
+4. **Document Insights**: Create visual mood boards
+
+### Phase 2: Style Rule Creation
+
+1. **Define Color Palette**:
+
+   ```css
+   --primary: #your-brand-color;
+   --secondary: #supporting-color;
+   --neutral-900: #background-dark;
+   --neutral-100: #background-light;
+   --text-primary: #high-contrast-text;
+   --text-secondary: #medium-contrast-text;
+   ```
+
+2. **Establish Spacing Scale**:
+
+   ```css
+   --space-1: 0.25rem;  /* 4px */
+   --space-2: 0.5rem;   /* 8px */
+   --space-3: 0.75rem;  /* 12px */
+   --space-4: 1rem;     /* 16px */
+   --space-6: 1.5rem;   /* 24px */
+   --space-8: 2rem;     /* 32px */
+   --space-12: 3rem;    /* 48px */
+   ```
+
+3. **Typography Scale**:
+
+   ```css
+   --text-xs: 0.75rem;   /* 12px */
+   --text-sm: 0.875rem;  /* 14px */
+   --text-base: 1rem;    /* 16px */
+   --text-lg: 1.125rem;  /* 18px */
+   --text-xl: 1.25rem;   /* 20px */
+   --text-2xl: 1.5rem;   /* 24px */
+   --text-3xl: 1.875rem; /* 30px */
+   ```
+
+4. **Component Standards**:
+   - Buttons: Consistent padding, radius, hover states
+   - Cards: Standard shadows/borders, spacing
+   - Forms: Uniform input styling, validation states
+   - Navigation: Consistent active/inactive states
+
+### Phase 3: AI Collaboration Protocol
+
+#### Prompt Template
+
+```
+You are a Senior UI/UX Developer. Create clean, professional UI code that follows these EXACT rules:
+
+🎨 DESIGN SYSTEM:
+- Colors: [primary, secondary, neutral palette]
+- Spacing: [scale with specific values]
+- Typography: [font families and weights]
+- Border Radius: [hierarchical system]
+
+🚫 STRICTLY FORBIDDEN:
+- Box shadows, gradients (except hover states)
+- Default fonts, blue-purple colors
+- Emoji icons, excessive animations
+- Glassmorphism effects
+
+✅ REQUIRED:
+- Use [specified icon library]
+- Professional animations only
+- Consistent spacing scale
+- Semantic color usage
+
+Create [component/page description] following these rules exactly.
+```
+
+#### Implementation Steps
+
+1. **Initial Generation**: AI creates base component
+2. **Human Review**: Check against rules, identify issues
+3. **Iterative Refinement**: Request specific improvements
+4. **Rule Documentation**: Update `UI_RULES.md` with successful patterns
+
+### Phase 4: Quality Assurance
+
+#### Automated Checks
+
+- Color contrast ratios (WCAG AA standard)
+- Consistent spacing usage
+- Typography scale adherence
+- Component library consistency
+
+#### Manual Reviews
+
+- Visual hierarchy assessment
+- Interaction flow testing
+- Cross-device compatibility
+- Performance impact evaluation
+
+### Phase 5: System Maintenance
+
+#### Rule Updates
+
+1. **Identify Changes**: New design requirements or user feedback
+2. **Update Rules**: Modify `UI_RULES.md` with new standards
+3. **Component Audit**: Review existing components for compliance
+4. **Migration Plan**: Update components systematically
+
+#### Version Control
+
+- Tag rule versions with design system releases
+- Document breaking changes
+- Maintain backward compatibility where possible
+
+## 🛠️ Technical Implementation
+
+### CSS Architecture
+
+```css
+/* design-system.css */
+:root {
+  /* Colors */
+  --color-primary: #your-primary;
+  --color-secondary: #your-secondary;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Component styles */
+.btn-primary {
+  background: var(--color-primary);
+  border-radius: var(--space-sm);
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+}
+```
+
+### Component Libraries
+
+- **shadcn/ui**: High-quality, customizable components
+- **Radix UI**: Accessible, unstyled primitives
+- **Tailwind CSS**: Utility-first with design tokens
+
+### Animation Guidelines
+
+```css
+/* Smooth, professional animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.element {
+  animation: slideIn 0.3s ease-out;
+}
+```
+
+## 📊 Success Metrics
+
+### Qualitative
+
+- User feedback on visual appeal
+- Design system adoption rate
+- Developer satisfaction with tools
+
+### Quantitative
+
+- Component consistency score
+- Design token usage percentage
+- Time-to-implement new features
+- Cross-platform visual parity
+
+## 🚀 Advanced Techniques
+
+### Design Tokens
+
+- Centralized design values
+- Platform-agnostic definitions
+- Automated generation from Figma/Sketch
+
+### Component Composition
+
+- Atomic design principles
+- Reusable, configurable components
+- Consistent API patterns
+
+### Performance Optimization
+
+- CSS-in-JS with runtime benefits
+- Critical CSS extraction
+- Image optimization pipelines
+
+## 📚 Resources
+
+### Design Inspiration
+
+- [Dribbble](https://dribbble.com) - UI design showcases
+- [Behance](https://behance.net) - Creative portfolios
+- [Pinterest](https://pinterest.com) - Visual discovery
+
+### Tools
+
+- [Figma](https://figma.com) - Design collaboration
+- [Storybook](https://storybook.js.org) - Component documentation
+- [Chromatic](https://chromatic.com) - Visual testing
+
+### Communities
+
+- [Spectrum](https://spectrum.chat) - Design systems discussion
+- [Design Systems Slack](<https://designsystems> slack.com) - Industry experts
+
+---
+
+*Remember: AI is a tool for efficiency, but human creativity and judgment create truly great design. Use these principles to collaborate effectively while maintaining your unique vision.*

@@ -67,8 +67,6 @@ lib/generated_plugin_registrant.dart
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter
 
-# Cursor IDE
-.cursor/
 
 # Documentation build artifacts
 docs/build/
